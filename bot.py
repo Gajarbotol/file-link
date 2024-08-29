@@ -2,7 +2,8 @@ import os
 import math
 import sqlite3
 import requests
-from telegram import Update, Bot, ParseMode
+from telegram import Update, Bot
+from telegram.constants import ParseMode  # Updated import for ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, ConversationHandler
 
 # Replace with your bot token
