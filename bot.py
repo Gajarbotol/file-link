@@ -3,8 +3,9 @@ import math
 import sqlite3
 import requests
 from telegram import Update, Bot
-from telegram.constants import ParseMode  # Updated import for ParseMode
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, ConversationHandler
+from telegram.constants import ParseMode
+from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, ConversationHandler
+from telegram.ext.filters import TEXT  # Updated import for Filters
 
 # Replace with your bot token
 BOT_TOKEN = '7448594075:AAFMCpeHgz1sjE7LgN0XMyPW14Bz8x2qab8'
@@ -153,7 +154,7 @@ def main():
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
         states={
-            LINK: [MessageHandler(Filters.text & ~Filters.command, get_file_link)],
+            LINK: [MessageHandler(TEXT & ~TEXT.command, get_file_link)],  # Updated to use TEXT filter
         },
         fallbacks=[CommandHandler('cancel', cancel)],
     )
