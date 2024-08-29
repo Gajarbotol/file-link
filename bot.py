@@ -6,7 +6,7 @@ from telegram import Update, Bot, ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, ConversationHandler
 
 # Replace with your bot token
-BOT_TOKEN = 'YOUR_BOT_TOKEN'
+BOT_TOKEN = '7448594075:AAFMCpeHgz1sjE7LgN0XMyPW14Bz8x2qab8'
 CHUNK_SIZE = 49 * 1024 * 1024  # 49 MB
 
 LINK, PROCESS = range(2)
